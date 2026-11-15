@@ -1,0 +1,651 @@
+/* =========================================
+   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ
+   ========================================= */
+@font-face {
+    font-family: 'Fedorovsk';
+    src: url('../fonts/FedorovskUnicode.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Ponomar';
+    src: url('../fonts/PonomarUnicode.otf') format('opentype');
+}
+
+/* =========================================
+   2. БАЗОВЫЕ НАСТРОЙКИ И СБРОС
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Serif', 'Georgia', serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #e8e6e1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.hero__inner,
+.page-content .container,
+.history-preview .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. ШАПКА САЙТА (HEADER)
+   ========================================= */
+.header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: 3px solid #8b0000;
+    position: relative; /* Важно для выпадающего меню */
+}
+
+.header .container {
+    max-width: 100%;
+    padding: 0 40px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo__img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e8d5b7;
+    object-position: center 20%;
+}
+
+.logo__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo__title {
+    font-family: 'Ponomar', serif;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #e8d5b7;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.logo__subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #dcdcdc;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav a {
+    font-family: Arial, sans-serif;
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+/* Стили для бургера (по умолчанию скрыт на десктопе) */
+.burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #e8d5b7;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* =========================================
+   4. ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================= */
+.hero {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero__motto {
+    font-family: 'Ponomar', 'PT Serif', serif;
+    font-size: 48px;
+    line-height: 1.4;
+    color: #ffffff;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    
+    background-image: url('../images/ring-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 120px;
+    max-width: 1000px;
+    width: 100%;
+    
+    border-top: 4px solid #8b0000;
+    border-bottom: 4px solid #8b0000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* =========================================
+   5. БЛОК ИСТОРИИ НА ГЛАВНОЙ
+   ========================================= */
+.history-preview {
+    padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.section-title {
+    font-family: 'Ponomar', serif;
+    font-size: 28px;
+    color: #b8860b;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    display: inline-block;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 10px;
+}
+
+.history-preview .container {
+    text-align: center;
+}
+
+.history-content {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #333;
+    text-align: justify;
+    text-align-last: left; 
+}
+
+.history-content p {
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #8b0000;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #8b0000;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #8b0000;
+}
+
+/* =========================================
+   6. ВНУТРЕННИЕ СТРАНИЦЫ
+   ========================================= */
+.page-content {
+    padding: 50px 0;
+}
+
+.page-title {
+    font-family: 'Ponomar', serif;
+    font-size: 36px;
+    color: #b8860b;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #8b0000;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.page-content .container {
+    text-align: center;
+}
+
+.page-content .container > *:not(.page-title) {
+    text-align: left;
+}
+
+/* =========================================
+   7. РАСПИСАНИЕ
+   ========================================= */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.schedule-card {
+    background-color: #fff;
+    border-left: 6px solid #8b0000;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card__title {
+    font-family: 'Ponomar', serif;
+    font-size: 24px;
+    color: #b8860b;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+.schedule-card__desc {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #8b0000;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.schedule-card__days {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-card__days li {
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 17px;
+    color: #444;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-card__days li:last-child {
+    border-bottom: none;
+}
+
+.schedule-card__days li span {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #2b2b2b;
+    font-size: 18px;
+}
+
+.schedule-note {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* =========================================
+   8. ПОДВАЛ (FOOTER)
+   ========================================= */
+.footer {
+    background-color: #1a1a1a;
+    color: #888;
+    padding: 15px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-left: 10px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   9. ТРЕНЕРСКИЙ СОСТАВ
+   ========================================= */
+.coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.coach-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #8b0000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.coach-card__img-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #e8e6e1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 3px solid #b8860b;
+    color: #888;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.coach-card__name {
+    font-family: 'Ponomar', serif;
+    font-size: 22px;
+    color: #b8860b;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.coach-card__role {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8b0000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.coach-card__desc {
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* =========================================
+   10. КАРТОЧКИ-ПЕРЕВЕРТЫШИ (ЧЕМПИОНЫ)
+   ========================================= */
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 420px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card.is-flipped .flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card__front, 
+.flip-card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card__front {
+    background-color: #fff;
+    border-top: 4px solid #8b0000;
+    border-radius: 4px;
+}
+
+.flip-card__back {
+    background-color: #1a1a1a;
+    color: #fff;
+    transform: rotateY(180deg);
+    border-top: 4px solid #b8860b;
+}
+
+.flip-card__desc {
+    font-family: 'PT Serif', 'Georgia', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    color: #ddd;
+    margin-top: 15px;
+}
+
+.flip-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #8b0000;
+    font-weight: bold;
+    opacity: 0.7;
+    transition: transform 0.3s;
+}
+
+.flip-card:hover .flip-icon {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* =========================================
+   11. АДАПТИВНОСТЬ (МОБИЛЬНАЯ ВЕРСИЯ)
+   ========================================= */
+@media (max-width: 1200px) {
+    .header__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .burger {
+        display: block; 
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        border-bottom: 3px solid #8b0000;
+        display: none; 
+        z-index: 5;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        margin: 0;
+        font-size: 16px;
+        padding: 5px 0;
+    }
+
+    .logo {
+        flex-direction: row; 
+        text-align: left;
+        gap: 10px;
+    }
+
+    .logo__img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo__title {
+        font-size: 36px;
+    }
+    
+    .logo__subtitle {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header .container,
+    .page-content .container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        flex-direction: column; 
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo__img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .logo__title {
+        font-size: 36px; 
+    }
+
+    .hero__motto {
+        font-size: 24px; 
+        padding: 30px 15px;
+        border-top: 3px solid #8b0000;
+        border-bottom: 3px solid #8b0000;
+    }
+
+    .page-title {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .coaches-grid, 
+    .champions-grid, 
+    .schedule-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .history-content {
+        font-size: 18px; 
+    }
+}
