@@ -413,7 +413,7 @@ main {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.coach-card__img-placeholder {
+.coach-card__img {
     width: 150px;
     height: 150px;
     background-color: #e8e6e1;
@@ -481,8 +481,21 @@ main {
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card__inner {
+/* .flip-card:hover .flip-card__inner {
     transform: rotateY(180deg);
+} */
+
+/* Эффект наведения только для устройств с мышкой (компьютеры) */
+@media (hover: hover) and (pointer: fine) {
+    .flip-card:hover .flip-card__inner {
+        transform: rotateY(180deg);
+    }
+    
+    /* Анимация значка поворота
+    .flip-card:hover .flip-icon {
+        transform: rotate(180deg);
+        opacity: 1;
+    } */
 }
 
 .flip-card.is-flipped .flip-card__inner {
